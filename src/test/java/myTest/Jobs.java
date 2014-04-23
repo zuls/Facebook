@@ -1,0 +1,29 @@
+package myTest;
+
+import org.testng.annotations.Test;
+import utilityPack.Utilities;
+
+/**
+ * Created by kona on 4/23/2014.
+ */
+public class Jobs extends Utilities{
+    @Test
+    public void searchAJob() throws Exception {
+        //Enter login id
+        typeByID("session_key-login","ratan512@aol.com");
+        //Enter password
+        typeByID("session_password-login","bangladesh");
+        //Click on sign in button.
+        clickById("signin");
+
+        //Go to jobs module by clicking on the menu
+        clickByXpath("/html/body/div[6]/div[2]/div/ul/li[4]/a");
+        //Type the desired job name
+        typeByID("job-search-box","Test Engineer");
+        //Click on the search button.
+        clickByXpath("/html/body/div[7]/div[2]/div[2]/div/form/div/input");
+
+        System.out.println("Job serach is working...");
+
+    }
+}
