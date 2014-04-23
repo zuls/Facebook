@@ -23,7 +23,8 @@ public class SearchCompany extends Utilities{
         //Enter search word. e.g. jp morgan
         typeByID("main-search-box","jp morgan");
         //Hit enter or click on the search button.
-        clickById("search");
+        clickByTagName("search");
+
 
         System.out.print("Search is working fine.");
 

@@ -19,19 +19,23 @@ public class EditProfile extends Utilities {
         //Click on sign in button.
         clickById("signin");
 
+        //Mouse over the Profile menu
+        mouseHover("Profile");
         //Go to Edit profile
-        clickByXpath("/html/body/div[6]/div[2]/div/ul/li[2]/a");
-        clickByXpath("/html/body/div[6]/div[2]/div/ul/li[2]/ul/li/a");
+        //clickByLinkText("Edit Profile");
+        driver.navigate().to("www.linkedin.com/profile/edit?trk=nav_responsive_sub_nav_edit_profile");
 
         //Click on Edit Summary
         clickByCss("a.edit-entire-section.edit-show-entire-section");
         //Add text to the summary field.
+        waitUntilVisible(By.id("expertise_comments-editExpertiseForm"));
         typeByID("expertise_comments-editExpertiseForm","Nothing Goes. Here Yess Summary updated");
         //Save summary section
-        clickByXpath("/html/body/div[12]/div/div[2]/div/div[3]/div/div/div/div[2]/div[2]/div/form/p/input");
+        //clickByXpath("/html/body/div[12]/div/div[2]/div/div[3]/div/div/div/div[2]/div[2]/div/form/p/input");
+        clickByTagName("submit");
 
         //Add position is the company
-        clickByCss("span.edit-add");
+        clickByCss("edit-add");
         //Enter Company name 'JP Morgan'
         typeByID("companyName-positionCompany-position-editPositionForm", "JP MOrgan");
         //Enter title

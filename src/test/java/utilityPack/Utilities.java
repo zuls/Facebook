@@ -3,6 +3,9 @@ package utilityPack;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.BeforeClass;
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -59,8 +62,9 @@ public class Utilities {
         driver.findElement(By.xpath(locator)).click();
     }
     public void clickByTagName(String locator){
-        driver.findElement(By.id(locator)).click();
+        driver.findElement(By.name(locator)).click();
     }
+
     public void clickByLinkText(String locator){
         driver.findElement(By.linkText(locator)).click();
     }
@@ -106,6 +110,32 @@ public class Utilities {
     //Type features or input features by id
     public void typeByID(String locator, String value){
         driver.findElement(By.id(locator)).sendKeys(value);
+    }
+
+    //mouse hover
+    public void mouseHover(String locator){
+        WebElement element = driver.findElement(By.linkText(locator));
+        Actions build = new Actions(driver);
+        Actions hover = build.moveToElement(element);
+        hover.perform();
+    }
+    //Synchronization
+    public void waitUntilVisible(By locator){
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+    }
+    public void waitUntilClickAble(By locator){
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        WebElement element = wait.until(ExpectedConditions.elementToBeClickable(locator));
+    }
+    public void waitUntilToBeSelected(By locator){
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        Boolean element = wait.until(ExpectedConditions.elementToBeSelected(locator));
+    }
+    //upload a file/image
+    public void upLoad(String locator, String filePath){
+        WebElement element = driver.findElement(By.cssSelector(locator));
+        element.sendKeys(filePath);
     }
 
     @AfterClass

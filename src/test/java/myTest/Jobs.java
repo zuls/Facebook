@@ -17,11 +17,12 @@ public class Jobs extends Utilities{
         clickById("signin");
 
         //Go to jobs module by clicking on the menu
-        clickByXpath("/html/body/div[6]/div[2]/div/ul/li[4]/a");
+        clickByLinkText("Jobs");
         //Type the desired job name
         typeByID("job-search-box","Test Engineer");
         //Click on the search button.
-        clickByXpath("/html/body/div[7]/div[2]/div[2]/div/form/div/input");
+        //clickByTagName("jsearch");
+        clickByCss("search-button");
 
         System.out.println("Job serach is working...");
 
