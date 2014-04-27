@@ -1,5 +1,6 @@
 package myTest;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import utilityPack.Utilities;
 
@@ -10,17 +11,17 @@ public class Registration extends Utilities{
     @Test
     public void registerInLinkedIn() throws Exception {
         //Enter Fisrt name
-        typeByID("firstName-coldRegistrationForm","Mtest1");
+        typeByID("firstName-coldRegistrationForm","Mtest3");
         //Enter Last Name
-        typeByID("lastName-coldRegistrationForm","Mtest1");
+        typeByID("lastName-coldRegistrationForm","Mtest3");
         //Enter Email ID
-        typeByID("email-coldRegistrationForm","mtest1.mtest1@gmail.com");
+        typeByID("email-coldRegistrationForm","mtest3.mtest3@gmail.com");
         //Enter Password
         typeByID("password-coldRegistrationForm","bogra123");
         //Click on submit button
-        clickByCss("btn-submit");
+        clickById("btn-submit");
 
-        System.out.println("Registration completed..");
-
+        //Check the title of LinkedIn for the next step 'Phone verification'.
+        Assert.assertEquals("Phone verification | LinkedIn", driver.getTitle().trim().toString());
     }
 }
