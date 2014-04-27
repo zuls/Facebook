@@ -7,7 +7,7 @@
 
     <test name="Regression test">
         <classes>
-            <!--class name="myTest.Registration"/-->
+            <class name="myTest.Registration"/>
             <!--class name="myTest.LogIn"/-->
             <!--class name="myTest.NavigateMenu"/-->
             <class name="myTest.SearchCompany"/>

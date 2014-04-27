@@ -19,16 +19,12 @@ public class SearchCompany extends Utilities{
         //Click on sign in button.
         clickById("signin");
 
-        //In the user home page, click on the search input box.
-        //Enter search word. e.g. jp morgan
+        //In the user home page, click on the search input box. Enter search word. e.g. jp morgan
         typeByID("main-search-box","jp morgan");
         //Hit enter or click on the search button.
         clickByTagName("search");
 
-        //clickByCss("html.os-win body#pagekey-member-home.member div#header.global-header div#top-header div.wrapper div.header-section form#global-search.global-search fieldset button.search-button");
-
-
-        System.out.print("Search is working fine.");
-
+        //Find the 'J.P. Morgan' text in the search result and compare with 'J.P. Morgan'
+        Assert.assertEquals("J.P. Morgan", driver.findElement(By.linkText("J.P. Morgan")).getText());
     }
 }

@@ -48,7 +48,8 @@ public class Utilities {
     //set the firefox driver
     public void setWebdriver(String url){
         driver = new FirefoxDriver();
-        driver.get(url);
+        driver.navigate().to(url);
+        driver.manage().window().maximize();
     }
 
     public void navigateBack(){
