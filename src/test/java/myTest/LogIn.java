@@ -1,6 +1,7 @@
 package myTest;
 
 import org.openqa.selenium.By;
+import org.testng.Assert;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import utilityPack.Utilities;
@@ -18,8 +19,7 @@ public class LogIn extends Utilities {
         //Click on sign in button.
         clickById("signin");
 
-        System.out.println("Login Success....");
-
-
+        //Check the availability of the text 'People you many know'
+        Assert.assertEquals("People You May Know", driver.findElement(By.linkText("People You May Know")).getText());
     }
 }

@@ -1,5 +1,7 @@
 package myTest;
 
+import org.openqa.selenium.By;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import utilityPack.Utilities;
 
@@ -21,10 +23,10 @@ public class Jobs extends Utilities{
         //Type the desired job name
         typeByID("job-search-box","Test Engineer");
         //Click on the search button.
-        //clickByTagName("jsearch");
-        clickByCss("search-button");
+        clickByTagName("jsearch");
+        //clickByCss("search-button");
 
-        System.out.println("Job serach is working...");
-
+        //Check the availablity of the 'Test Engineer' text in the search result
+        Assert.assertEquals("Test Engineer", driver.findElement(By.xpath("//div[@id='results_count']/p/strong[2]")).getText());
     }
 }
