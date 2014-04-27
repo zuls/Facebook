@@ -25,6 +25,8 @@ public class SearchCompany extends Utilities{
         //Hit enter or click on the search button.
         clickByTagName("search");
 
+        //clickByCss("html.os-win body#pagekey-member-home.member div#header.global-header div#top-header div.wrapper div.header-section form#global-search.global-search fieldset button.search-button");
+
 
         System.out.print("Search is working fine.");
 

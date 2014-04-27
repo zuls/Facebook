@@ -10,10 +10,10 @@
             <!--class name="myTest.Registration"/-->
             <!--class name="myTest.LogIn"/-->
             <!--class name="myTest.NavigateMenu"/-->
-            <!--class name="myTest.SearchCompany"/-->
+            <class name="myTest.SearchCompany"/>
             <!--class name="myTest.EditProfile"/-->
             <!--class name="myTest.MessageInbox"/-->
-            <class name="myTest.Jobs"/>
+            <!--class name="myTest.Jobs"/-->
             <!--class name="myTest.LogOut"/-->
 
         </classes>
