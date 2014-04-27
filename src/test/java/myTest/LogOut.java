@@ -1,5 +1,7 @@
 package myTest;
 
+import org.openqa.selenium.By;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import utilityPack.Utilities;
 
@@ -20,9 +22,9 @@ public class LogOut extends Utilities {
         //clickByXpath("//*[@id=\"img-defer-id-1-59974\"]");
 
         //CLick on sign out
-        //clickByXpath("/html/body/div[4]/div/div/div[2]/ul/li[4]/div/div/div[2]/ul/li/div/span/span[3]/a");
         clickByCss("a.account-toggle");
-        System.out.println("Sign out works!!");
 
+        //Find the text 'You have signed out' in the post logout page.
+        Assert.assertEquals("You have signed out", driver.findElement(By.cssSelector("h1")).getText());
     }
 }
