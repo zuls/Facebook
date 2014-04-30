@@ -23,16 +23,16 @@ public class EditProfile extends Utilities {
         clickById("signin");
 
         //Mouse over the Profile menu
-        mouseHover("Profile");
+        //mouseHover("Profile");
         //Go to Edit profile
         //clickByLinkText("Edit Profile");
         driver.navigate().to("www.linkedin.com/profile/edit?trk=nav_responsive_sub_nav_edit_profile");
 
         //Click on Edit Summary
-        clickByCss("a.edit-entire-section.edit-show-entire-section");
+        //clickByCss("a.edit-entire-section.edit-show-entire-section");
         //Add text to the summary field.
-        waitUntilVisible(By.id("expertise_comments-editExpertiseForm"));
-        typeByID("expertise_comments-editExpertiseForm","Nothing Goes. Here Yess Summary updated");
+        //waitUntilVisible(By.id("expertise_comments-editExpertiseForm"));
+        //typeByID("expertise_comments-editExpertiseForm","Nothing Goes. Here Yess Summary updated");
         //Save summary section
         //clickByTagName("submit");
 
