@@ -3,6 +3,7 @@ package myTest;
 
 import org.openqa.selenium.By;
 import org.testng.Assert;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import utilityPack.Utilities;
 
@@ -10,13 +11,15 @@ import utilityPack.Utilities;
  * Created by kona on 4/23/2014.
  */
 public class MessageInbox extends Utilities {
+    @Parameters({"username","password"})
     @Test
-    public void gotoInbox() throws Exception {
+    public void gotoInbox(String username, String password) throws Exception {
         //Enter login id
-        typeByID("session_key-login","ratan512@aol.com");
+        typeByID("session_key-login",username);
         //Enter password
-        typeByID("session_password-login","bangladesh");
+        typeByID("session_password-login",password);
         //Click on sign in button.
+        waitUntilClickAble(By.cssSelector("#signin"));
         clickById("signin");
 
 

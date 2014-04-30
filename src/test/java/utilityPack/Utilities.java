@@ -52,6 +52,11 @@ public class Utilities {
         driver.manage().window().maximize();
     }
 
+    @AfterClass
+    public void tearDown() throws Exception {
+        driver.close();
+    }
+
     public void navigateBack(){
         driver.navigate().back();
     }
@@ -139,9 +144,10 @@ public class Utilities {
         element.sendKeys(filePath);
     }
 
-    @AfterClass
-    public void tearDown() throws Exception {
-        driver.close();
-    }
+
+
+
+
+
 
 }

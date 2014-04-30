@@ -1,6 +1,7 @@
 package myTest;
 
 import org.openqa.selenium.By;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import utilityPack.Utilities;
 import org.testng.Assert;
@@ -10,13 +11,15 @@ import java.lang.Object;
  * Created by kona on 4/23/2014.
  */
 public class SearchCompany extends Utilities{
+    @Parameters({"username","password"})
     @Test
-    public void SearchACompnay() throws Exception {
+    public void SearchACompnay(String username, String password) throws Exception {
         //Enter login id
-        typeByID("session_key-login","ratan512@aol.com");
+        typeByID("session_key-login",username);
         //Enter password
-        typeByID("session_password-login","bangladesh");
+        typeByID("session_password-login",password);
         //Click on sign in button.
+        waitUntilClickAble(By.cssSelector("#signin"));
         clickById("signin");
 
         //In the user home page, click on the search input box. Enter search word. e.g. jp morgan

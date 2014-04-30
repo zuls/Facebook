@@ -2,6 +2,7 @@ package myTest;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import utilityPack.Utilities;
 
@@ -9,14 +10,16 @@ import utilityPack.Utilities;
  * Created by kona on 4/23/2014.
  */
 public class EditProfile extends Utilities {
+    @Parameters({"username","password"})
     @Test
-    public void editUserProfile() throws Exception {
+    public void editUserProfile(String username, String password) throws Exception {
 
         //Enter login id
-        typeByID("session_key-login","ratan512@aol.com");
+        typeByID("session_key-login",username);
         //Enter password
-        typeByID("session_password-login","bangladesh");
+        typeByID("session_password-login",password);
         //Click on sign in button.
+        waitUntilClickAble(By.cssSelector("#signin"));
         clickById("signin");
 
         //Mouse over the Profile menu
