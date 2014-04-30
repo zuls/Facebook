@@ -57,7 +57,7 @@ public class Utilities {
     }
     // clicking features
     public void clickById(String locator){
-        driver.findElement(By.id(locator)).click();
+        driver.findElement(By.id(locator.trim())).click();
     }
     public void clickByXpath(String locator){
         driver.findElement(By.xpath(locator)).click();
