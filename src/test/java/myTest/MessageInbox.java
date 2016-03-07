@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 import utilityPack.Utilities;
 
 /**
- * Created by kona on 4/23/2014.
+ * Created by zuls on 4/23/2014.
  */
 public class MessageInbox extends Utilities {
     @Parameters({"username","password"})
