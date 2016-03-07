@@ -8,7 +8,7 @@ import org.testng.Assert;
 import java.lang.Object;
 
 /**
- * Created by kona on 4/23/2014.
+ * Created by zuls on 4/23/2014.
  */
 public class SearchCompany extends Utilities{
     @Parameters({"username","password"})
