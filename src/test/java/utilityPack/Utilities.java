@@ -20,7 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by kona on 4/23/2014.
+ * Created by zuls on 4/23/2014.
  */
 public class Utilities {
     public WebDriver driver=null;
